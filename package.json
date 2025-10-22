@@ -13,13 +13,9 @@
     "typecheck": "tsc --noEmit"
   },
   "scripts": {
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d build"
-},
-  "scripts": {
-  "build": "next build",
-  "export": "next export",
-  "deploy": "npm run build && npm run export"
+  "predeploy": "npm run build",        // builds your app before deploy
+  "deploy": "gh-pages -d build",       // or -d out for Next.js export
+  "start": "react-scripts start"
 },
   "dependencies": {
     "@genkit-ai/google-genai": "^1.20.0",
