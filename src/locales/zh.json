@@ -1,0 +1,84 @@
+{
+    "loading": "加载中...",
+    "sidebar": {
+        "dashboard": "仪表板",
+        "transactions": "交易",
+        "categories": "类别",
+        "savings": "储蓄",
+        "analysis": "AI分析",
+        "settings": "设置"
+    },
+    "header": {
+        "toggleMenu": "切换菜单",
+        "searchPlaceholder": "搜索..."
+    },
+    "userNav": {
+        "myAccount": "我的账户",
+        "settings": "设置",
+        "logout": "登出"
+    },
+    "dashboard": {
+        "greeting": {
+            "morning": "早上好",
+            "afternoon": "下午好",
+            "evening": "晚上好"
+        },
+        "welcomeMessage": "这是您今天的财务摘要。",
+        "totalBalance": "总余额",
+        "totalBalanceDesc": "您的财务快照",
+        "income": "收入",
+        "expenses": "支出",
+        "thisMonth": "本月",
+        "goalsActive": "进行中的目标",
+        "goalsActiveDesc": "继续努力！",
+        "recentTransactions": "最近的交易",
+        "recentTransactionsDesc": "您最近的5笔交易。",
+        "viewAll": "查看全部",
+        "goalsDesc": "您实现财务目标的进度。",
+        "spendingBreakdown": "支出明细",
+        "spendingBreakdownDesc": "本月各类别支出。"
+    },
+    "transactions": {
+        "title": "交易",
+        "description": "管理您的收入和支出。",
+        "category": "类别",
+        "type": "类型",
+        "date": "日期",
+        "amount": "金额",
+        "actions": "操作",
+        "all": "全部",
+        "income": "收入",
+        "expense": "支出",
+        "filter": "筛选",
+        "export": "导出",
+        "addTransaction": "添加交易",
+        "showingOf": "显示 {{total}} 条交易中的 {{count}} 条"
+    },
+    "goals": {
+        "title": "储蓄目标",
+        "description": "追踪您实现财务目标的进度。"
+    },
+    "settings": {
+        "title": "设置",
+        "description": "管理您的帐户和应用程序首选项。",
+        "savePreferences": "保存首选项",
+        "general": {
+            "title": "通用",
+            "description": "管理您的应用程序范围内的首选项。",
+            "currency": "货币",
+            "currencyPlaceholder": "选择您的货币",
+            "language": "语言",
+            "languagePlaceholder": "选择您的语言",
+            "saveToastTitle": "首选项已保存",
+            "saveToastDescription": "您的通用设置已更新。"
+        },
+        "account": {
+            "title": "账户",
+            "description": "在此处更改您的帐户。完成后单击保存。"
+        },
+        "appearance": {
+            "title": "外观",
+            "description": "自定义应用程序的外观和感觉。"
+        }
+    }
+}

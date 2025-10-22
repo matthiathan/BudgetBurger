@@ -1,0 +1,84 @@
+{
+    "loading": "Cargando...",
+    "sidebar": {
+        "dashboard": "Panel",
+        "transactions": "Transacciones",
+        "categories": "Categorías",
+        "savings": "Ahorros",
+        "analysis": "Análisis de IA",
+        "settings": "Ajustes"
+    },
+    "header": {
+        "toggleMenu": "Alternar menú",
+        "searchPlaceholder": "Buscar..."
+    },
+    "userNav": {
+        "myAccount": "Mi Cuenta",
+        "settings": "Ajustes",
+        "logout": "Cerrar sesión"
+    },
+    "dashboard": {
+        "greeting": {
+            "morning": "Buenos días",
+            "afternoon": "Buenas tardes",
+            "evening": "Buenas noches"
+        },
+        "welcomeMessage": "Aquí está tu resumen financiero para hoy.",
+        "totalBalance": "Saldo Total",
+        "totalBalanceDesc": "Tu panorama financiero",
+        "income": "Ingresos",
+        "expenses": "Gastos",
+        "thisMonth": "Este mes",
+        "goalsActive": "Metas Activas",
+        "goalsActiveDesc": "¡Sigue con el buen trabajo!",
+        "recentTransactions": "Transacciones Recientes",
+        "recentTransactionsDesc": "Tus 5 transacciones más recientes.",
+        "viewAll": "Ver Todo",
+        "goalsDesc": "Tu progreso hacia tus metas financieras.",
+        "spendingBreakdown": "Desglose de Gastos",
+        "spendingBreakdownDesc": "Gastos por categoría para este mes."
+    },
+    "transactions": {
+        "title": "Transacciones",
+        "description": "Administra tus ingresos y gastos.",
+        "category": "Categoría",
+        "type": "Tipo",
+        "date": "Fecha",
+        "amount": "Monto",
+        "actions": "Acciones",
+        "all": "Todo",
+        "income": "Ingreso",
+        "expense": "Gasto",
+        "filter": "Filtrar",
+        "export": "Exportar",
+        "addTransaction": "Añadir Transacción",
+        "showingOf": "Mostrando {{count}} de {{total}} transacciones"
+    },
+    "goals": {
+        "title": "Metas de Ahorro",
+        "description": "Sigue tu progreso hacia tus aspiraciones financieras."
+    },
+    "settings": {
+        "title": "Ajustes",
+        "description": "Administra tu cuenta y las preferencias de la aplicación.",
+        "savePreferences": "Guardar preferencias",
+        "general": {
+            "title": "General",
+            "description": "Administra las preferencias de toda la aplicación.",
+            "currency": "Moneda",
+            "currencyPlaceholder": "Selecciona tu moneda",
+            "language": "Idioma",
+            "languagePlaceholder": "Selecciona tu idioma",
+            "saveToastTitle": "Preferencias Guardadas",
+            "saveToastDescription": "Tus ajustes generales han sido actualizados."
+        },
+        "account": {
+            "title": "Cuenta",
+            "description": "Haz cambios en tu cuenta aquí. Haz clic en guardar cuando hayas terminado."
+        },
+        "appearance": {
+            "title": "Apariencia",
+            "description": "Personaliza la apariencia de la aplicación."
+        }
+    }
+}

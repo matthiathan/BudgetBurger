@@ -1,0 +1,84 @@
+{
+    "loading": "Loading...",
+    "sidebar": {
+        "dashboard": "Dashboard",
+        "transactions": "Transactions",
+        "categories": "Categories",
+        "savings": "Savings",
+        "analysis": "AI Analysis",
+        "settings": "Settings"
+    },
+    "header": {
+        "toggleMenu": "Toggle Menu",
+        "searchPlaceholder": "Search..."
+    },
+    "userNav": {
+        "myAccount": "My Account",
+        "settings": "Settings",
+        "logout": "Logout"
+    },
+    "dashboard": {
+        "greeting": {
+            "morning": "Good morning",
+            "afternoon": "Good afternoon",
+            "evening": "Good evening"
+        },
+        "welcomeMessage": "Here's your financial summary for today.",
+        "totalBalance": "Total Balance",
+        "totalBalanceDesc": "Your financial snapshot",
+        "income": "Income",
+        "expenses": "Expenses",
+        "thisMonth": "This month",
+        "goalsActive": "Goals Active",
+        "goalsActiveDesc": "Keep up the great work!",
+        "recentTransactions": "Recent Transactions",
+        "recentTransactionsDesc": "Your 5 most recent transactions.",
+        "viewAll": "View All",
+        "goalsDesc": "Your progress towards your financial goals.",
+        "spendingBreakdown": "Spending Breakdown",
+        "spendingBreakdownDesc": "Category spending for this month."
+    },
+    "transactions": {
+        "title": "Transactions",
+        "description": "Manage your income and expenses.",
+        "category": "Category",
+        "type": "Type",
+        "date": "Date",
+        "amount": "Amount",
+        "actions": "Actions",
+        "all": "All",
+        "income": "Income",
+        "expense": "Expense",
+        "filter": "Filter",
+        "export": "Export",
+        "addTransaction": "Add Transaction",
+        "showingOf": "Showing {{count}} of {{total}} transactions"
+    },
+    "goals": {
+        "title": "Savings Goals",
+        "description": "Track your progress towards your financial aspirations."
+    },
+    "settings": {
+        "title": "Settings",
+        "description": "Manage your account and application preferences.",
+        "savePreferences": "Save preferences",
+        "general": {
+            "title": "General",
+            "description": "Manage your application-wide preferences.",
+            "currency": "Currency",
+            "currencyPlaceholder": "Select your currency",
+            "language": "Language",
+            "languagePlaceholder": "Select your language",
+            "saveToastTitle": "Preferences Saved",
+            "saveToastDescription": "Your general settings have been updated."
+        },
+        "account": {
+            "title": "Account",
+            "description": "Make changes to your account here. Click save when you're done."
+        },
+        "appearance": {
+            "title": "Appearance",
+            "description": "Customize the look and feel of the app."
+        }
+    }
+}

@@ -1,0 +1,84 @@
+{
+    "loading": "Laai...",
+    "sidebar": {
+        "dashboard": "Dashboard",
+        "transactions": "Transaksies",
+        "categories": "Kategorieë",
+        "savings": "Spaar",
+        "analysis": "KI-analise",
+        "settings": "Instellings"
+    },
+    "header": {
+        "toggleMenu": "Wissel spyskaart",
+        "searchPlaceholder": "Soek..."
+    },
+    "userNav": {
+        "myAccount": "My Rekening",
+        "settings": "Instellings",
+        "logout": "Teken uit"
+    },
+    "dashboard": {
+        "greeting": {
+            "morning": "Goeie môre",
+            "afternoon": "Goeie middag",
+            "evening": "Goeie naand"
+        },
+        "welcomeMessage": "Hier is jou finansiële opsomming vir vandag.",
+        "totalBalance": "Totale Saldo",
+        "totalBalanceDesc": "Jou finansiële oorsig",
+        "income": "Inkomste",
+        "expenses": "Uitgawes",
+        "thisMonth": "Hierdie maand",
+        "goalsActive": "Aktiewe Doelwitte",
+        "goalsActiveDesc": "Hou so aan met die goeie werk!",
+        "recentTransactions": "Onlangse Transaksies",
+        "recentTransactionsDesc": "Jou 5 mees onlangse transaksies.",
+        "viewAll": "Sien Alles",
+        "goalsDesc": "Jou vordering met jou finansiële doelwitte.",
+        "spendingBreakdown": "Uitgawes Analise",
+        "spendingBreakdownDesc": "Kategorie-uitgawes vir hierdie maand."
+    },
+    "transactions": {
+        "title": "Transaksies",
+        "description": "Bestuur jou inkomste en uitgawes.",
+        "category": "Kategorie",
+        "type": "Tipe",
+        "date": "Datum",
+        "amount": "Bedrag",
+        "actions": "Aksies",
+        "all": "Alles",
+        "income": "Inkomste",
+        "expense": "Uitgawe",
+        "filter": "Filtreer",
+        "export": "Voer uit",
+        "addTransaction": "Voeg Transaksie by",
+        "showingOf": "Wys {{count}} van {{total}} transaksies"
+    },
+    "goals": {
+        "title": "Spaar Doelwitte",
+        "description": "Volg jou vordering met jou finansiële aspirasies."
+    },
+    "settings": {
+        "title": "Instellings",
+        "description": "Bestuur jou rekening en programvoorkeure.",
+        "savePreferences": "Stoor voorkeure",
+        "general": {
+            "title": "Algemeen",
+            "description": "Bestuur jou programwye voorkeure.",
+            "currency": "Geldeenheid",
+            "currencyPlaceholder": "Kies jou geldeenheid",
+            "language": "Taal",
+            "languagePlaceholder": "Kies jou taal",
+            "saveToastTitle": "Voorkeure Gestoor",
+            "saveToastDescription": "Jou algemene instellings is opgedateer."
+        },
+        "account": {
+            "title": "Rekening",
+            "description": "Maak veranderinge aan jou rekening hier. Klik stoor wanneer jy klaar is."
+        },
+        "appearance": {
+            "title": "Voorkoms",
+            "description": "Pasmaak die voorkoms en gevoel van die toepassing."
+        }
+    }
+}

@@ -1,0 +1,131 @@
+/**
+ * @fileoverview Firestore Security Rules for Budget Burger application.
+ *
+ * Core Philosophy:
+ * This ruleset enforces a strict user-ownership model for all data. Each user has complete control over their own data, and no access to other users' data.
+ *
+ * Data Structure:
+ * Data is organized under the `/users/{userId}` path, with subcollections for settings, transactions, categories, and goals. This structure ensures data isolation.
+ *
+ * Key Security Decisions:
+ * - Users can only access data under their own user ID.
+ * - Listing of other user's transactions, categories, and goals is disallowed.
+ *
+ * Denormalization for Authorization:
+ * The `userId` field is included in `Transaction`, `Category`, and `Goal` documents to allow direct authorization checks without needing to access parent documents.
+ */
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    /**
+     * @description Controls access to user account information.
+     * @path /users/{userId}
+     * @allow (create) - Authenticated user can create their own user document if the userId matches their auth UID.
+     * @allow (get) - Authenticated user can read their own user document.
+     * @allow (update) - Authenticated user can update their own user document.
+     * @allow (delete) - Authenticated user can delete their own user document.
+     * @deny (list) - Listing all users is not allowed.
+     * @principle Enforces document ownership for writes, restricts access to a user's own data.
+     */
+    match /users/{userId} {
+      function isOwner(userId) {
+        return request.auth != null && request.auth.uid == userId;
+      }
+
+      allow get: if isOwner(userId);
+      allow list: if false;
+      allow create: if isOwner(userId) && request.resource.data.id == userId;
+      allow update: if isOwner(userId) && resource.data.id == userId;
+      allow delete: if isOwner(userId) && resource.data.id == userId && resource != null;
+    }
+
+    /**
+     * @description Controls access to user settings.
+     * @path /users/{userId}/settings/{settingsId}
+     * @allow (create) - Authenticated user can create their own settings document if the userId matches their auth UID.
+     * @allow (get) - Authenticated user can read their own settings document.
+     * @allow (update) - Authenticated user can update their own settings document.
+     * @allow (delete) - Authenticated user can delete their own settings document.
+     * @deny (list) - Listing settings is not allowed.
+     * @principle Enforces document ownership for writes, restricts access to a user's own data.
+     */
+    match /users/{userId}/settings/{settingsId} {
+      function isOwner(userId) {
+        return request.auth != null && request.auth.uid == userId;
+      }
+
+      allow get: if isOwner(userId);
+      allow list: if isOwner(userId);
+      allow create: if isOwner(userId);
+      allow update: if isOwner(userId);
+      allow delete: if isOwner(userId) && resource != null;
+    }
+
+    /**
+     * @description Controls access to user transactions.
+     * @path /users/{userId}/transactions/{transactionId}
+     * @allow (create) - Authenticated user can create a transaction if the userId in the transaction matches their auth UID.
+     * @allow (get) - Authenticated user can read their own transaction.
+     * @allow (update) - Authenticated user can update their own transaction.
+     * @allow (delete) - Authenticated user can delete their own transaction.
+     * @deny (list) - Listing transactions is not allowed for other users.
+     * @principle Enforces document ownership for writes, restricts access to a user's own data.
+     */
+    match /users/{userId}/transactions/{transactionId} {
+      function isOwner(userId) {
+        return request.auth != null && request.auth.uid == userId;
+      }
+
+      allow get: if isOwner(userId);
+      allow list: if isOwner(userId);
+      allow create: if isOwner(userId) && request.resource.data.userId == userId;
+      allow update: if isOwner(userId) && resource.data.userId == userId && resource != null;
+      allow delete: if isOwner(userId) && resource.data.userId == userId && resource != null;
+    }
+
+    /**
+     * @description Controls access to user categories.
+     * @path /users/{userId}/categories/{categoryId}
+     * @allow (create) - Authenticated user can create a category if the userId in the category matches their auth UID.
+     * @allow (get) - Authenticated user can read their own category.
+     * @allow (update) - Authenticated user can update their own category.
+     * @allow (delete) - Authenticated user can delete their own category.
+     * @deny (list) - Listing categories is not allowed for other users.
+     * @principle Enforces document ownership for writes, restricts access to a user's own data.
+     */
+    match /users/{userId}/categories/{categoryId} {
+      function isOwner(userId) {
+        return request.auth != null && request.auth.uid == userId;
+      }
+
+      allow get: if isOwner(userId);
+      allow list: if isOwner(userId);
+      allow create: if isOwner(userId) && request.resource.data.userId == userId;
+      allow update: if isOwner(userId) && resource.data.userId == userId && resource != null;
+      allow delete: if isOwner(userId) && resource.data.userId == userId && resource != null;
+    }
+
+    /**
+     * @description Controls access to user goals.
+     * @path /users/{userId}/goals/{goalId}
+     * @allow (create) - Authenticated user can create a goal if the userId in the goal matches their auth UID.
+     * @allow (get) - Authenticated user can read their own goal.
+     * @allow (update) - Authenticated user can update their own goal.
+     * @allow (delete) - Authenticated user can delete their own goal.
+     * @deny (list) - Listing goals is not allowed for other users.
+     * @principle Enforces document ownership for writes, restricts access to a user's own data.
+     */
+    match /users/{userId}/goals/{goalId} {
+      function isOwner(userId) {
+        return request.auth != null && request.auth.uid == userId;
+      }
+
+      allow get: if isOwner(userId);
+      allow list: if isOwner(userId);
+      allow create: if isOwner(userId) && request.resource.data.userId == userId;
+      allow update: if isOwner(userId) && resource.data.userId == userId && resource != null;
+      allow delete: if isOwner(userId) && resource.data.userId == userId && resource != null;
+    }
+  }
+}

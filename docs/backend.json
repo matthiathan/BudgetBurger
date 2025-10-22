@@ -1,0 +1,381 @@
+{
+  "entities": {
+    "User": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "User",
+      "type": "object",
+      "description": "Stores user account information and preferences.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the User entity."
+        },
+        "displayName": {
+          "type": "string",
+          "description": "The user's display name."
+        },
+        "email": {
+          "type": "string",
+          "description": "The user's email address.",
+          "format": "email"
+        },
+        "settings": {
+          "type": "string",
+          "description": "settings id which is used to reference the users settings"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Timestamp of when the user account was created.",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "id",
+        "displayName",
+        "email",
+        "settings",
+        "createdAt"
+      ]
+    },
+    "Settings": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Settings",
+      "type": "object",
+      "description": "Stores user-specific settings and preferences.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the Settings entity."
+        },
+        "currency": {
+          "type": "string",
+          "description": "The user's preferred currency."
+        },
+        "language": {
+          "type": "string",
+          "description": "The user's preferred language."
+        },
+        "theme": {
+          "type": "string",
+          "description": "The user's preferred theme (e.g., dark, light)."
+        },
+        "accent": {
+          "type": "string",
+          "description": "The user's preferred accent color."
+        },
+        "font": {
+          "type": "string",
+          "description": "The user's preferred font."
+        },
+        "layout": {
+          "type": "string",
+          "description": "The user's preferred layout (e.g., sidebar-left)."
+        },
+        "roundedCorners": {
+          "type": "boolean",
+          "description": "Whether the user prefers rounded corners."
+        },
+        "compactMode": {
+          "type": "boolean",
+          "description": "Whether the user prefers compact mode."
+        }
+      },
+      "required": [
+        "id",
+        "currency",
+        "language",
+        "theme",
+        "accent",
+        "font",
+        "layout",
+        "roundedCorners",
+        "compactMode"
+      ]
+    },
+    "Transaction": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Transaction",
+      "type": "object",
+      "description": "Stores income and expense records.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the Transaction entity."
+        },
+        "userId": {
+          "type": "string",
+          "description": "Reference to User. (Relationship: User 1:N Transaction)"
+        },
+        "amount": {
+          "type": "number",
+          "description": "The transaction amount."
+        },
+        "currency": {
+          "type": "string",
+          "description": "The currency of the transaction."
+        },
+        "type": {
+          "type": "string",
+          "description": "The type of transaction (e.g., income, expense)."
+        },
+        "categoryId": {
+          "type": "string",
+          "description": "Reference to Category. (Relationship: Category 1:N Transaction)"
+        },
+        "date": {
+          "type": "string",
+          "description": "The date of the transaction.",
+          "format": "date-time"
+        },
+        "notes": {
+          "type": "string",
+          "description": "Notes about the transaction."
+        },
+        "tags": {
+          "type": "array",
+          "description": "Tags associated with the transaction.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "attachments": {
+          "type": "array",
+          "description": "File attachment",
+          "items": {
+            "type": "string"
+          }
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Timestamp of when the transaction was created.",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "Timestamp of when the transaction was last updated.",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "id",
+        "userId",
+        "amount",
+        "currency",
+        "type",
+        "categoryId",
+        "date",
+        "notes",
+        "tags",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "Category": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Category",
+      "type": "object",
+      "description": "Stores categories for income and expenses.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the Category entity."
+        },
+        "userId": {
+          "type": "string",
+          "description": "Reference to User. (Relationship: User 1:N Category)"
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the category."
+        },
+        "type": {
+          "type": "string",
+          "description": "The type of category (e.g., income, expense)."
+        },
+        "color": {
+          "type": "string",
+          "description": "The color associated with the category."
+        },
+        "icon": {
+          "type": "string",
+          "description": "The icon associated with the category."
+        },
+        "monthlyBudget": {
+          "type": "number",
+          "description": "The monthly budget for the category."
+        }
+      },
+      "required": [
+        "id",
+        "userId",
+        "name",
+        "type",
+        "color",
+        "icon",
+        "monthlyBudget"
+      ]
+    },
+    "Goal": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Goal",
+      "type": "object",
+      "description": "Stores user-defined goals.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the Goal entity."
+        },
+        "userId": {
+          "type": "string",
+          "description": "Reference to User. (Relationship: User 1:N Goal)"
+        },
+        "title": {
+          "type": "string",
+          "description": "The title of the goal."
+        },
+        "targetAmount": {
+          "type": "number",
+          "description": "The target amount for the goal."
+        },
+        "currentAmount": {
+          "type": "number",
+          "description": "The current amount saved towards the goal."
+        },
+        "currency": {
+          "type": "string",
+          "description": "The currency of the goal."
+        },
+        "deadline": {
+          "type": "string",
+          "description": "The deadline for the goal.",
+          "format": "date-time"
+        },
+        "priority": {
+          "type": "string",
+          "description": "The priority of the goal."
+        },
+        "status": {
+          "type": "string",
+          "description": "The status of the goal (e.g., active, completed)."
+        }
+      },
+      "required": [
+        "id",
+        "userId",
+        "title",
+        "targetAmount",
+        "currentAmount",
+        "currency",
+        "deadline",
+        "priority",
+        "status"
+      ]
+    }
+  },
+  "auth": {
+    "providers": [
+      "password"
+    ]
+  },
+  "firestore": {
+    "structure": [
+      {
+        "path": "/users/{userId}",
+        "definition": {
+          "entityName": "User",
+          "schema": {
+            "$ref": "#/backend/entities/User"
+          },
+          "description": "Stores user account information and preferences. The userId parameter identifies the user document.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The unique identifier for the user."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/users/{userId}/settings/{settingsId}",
+        "definition": {
+          "entityName": "Settings",
+          "schema": {
+            "$ref": "#/backend/entities/Settings"
+          },
+          "description": "Stores user-specific settings and preferences. The settingsId parameter identifies the settings document.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The unique identifier for the user."
+            },
+            {
+              "name": "settingsId",
+              "description": "The unique identifier for the settings document."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/users/{userId}/transactions/{transactionId}",
+        "definition": {
+          "entityName": "Transaction",
+          "schema": {
+            "$ref": "#/backend/entities/Transaction"
+          },
+          "description": "Stores income and expense records. Includes denormalized 'userId' for authorization independence.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The unique identifier for the user. Ensures data isolation and enables simple security rules."
+            },
+            {
+              "name": "transactionId",
+              "description": "The unique identifier for the transaction."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/users/{userId}/categories/{categoryId}",
+        "definition": {
+          "entityName": "Category",
+          "schema": {
+            "$ref": "#/backend/entities/Category"
+          },
+          "description": "Stores categories for income and expenses. Includes denormalized 'userId' for authorization independence.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The unique identifier for the user. Ensures data isolation and enables simple security rules."
+            },
+            {
+              "name": "categoryId",
+              "description": "The unique identifier for the category."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/users/{userId}/goals/{goalId}",
+        "definition": {
+          "entityName": "Goal",
+          "schema": {
+            "$ref": "#/backend/entities/Goal"
+          },
+          "description": "Stores user-defined goals. Includes denormalized 'userId' for authorization independence.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The unique identifier for the user. Ensures data isolation and enables simple security rules."
+            },
+            {
+              "name": "goalId",
+              "description": "The unique identifier for the goal."
+            }
+          ]
+        }
+      }
+    ],
+    "reasoning": "The Firestore structure is designed to ensure data isolation and facilitate secure and efficient data access for the Budget Burger application. Each user's data is stored under their respective user ID, ensuring no cross-user data access. The structure leverages path-based ownership for Transactions, Categories, and Goals, placing them as subcollections under the `/users/{userId}` document. This design choice allows for simple and robust security rules based on the authenticated user's ID.\n\n**Authorization Independence (Denormalization):** The `Transaction`, `Category`, and `Goal` documents all include the `userId` field. While this might seem redundant, it's crucial for authorization independence. Without the `userId` within each document, security rules would need to perform expensive `get()` operations to check the parent document's ownership. By denormalizing the `userId`, we can enforce security rules directly on the document level without relying on parent document data, which is essential for atomic operations (transactions/batches) and easier debugging.\n\n**QAPs (Rules are not Filters):** The chosen structure supports secure `list` operations by ensuring that each collection contains only documents belonging to a single user. The security rules can simply check if `request.auth.uid == userId` to allow listing documents within that user's subcollections, preventing unauthorized data access. Segregation by user ID is the primary strategy for ensuring QAPs.\n\n**Invariants:** The structure supports the integrity of ownership by making the `userId` an immutable field within each document. Timestamps (`createdAt`, `updatedAt`) ensure data consistency. Denormalization is limited to the `userId` field, which simplifies management and reduces potential inconsistencies. The explicit modeling of the goal `status` field, instead of inferring status from multiple fields ensures data clarity."
+  }
+}
